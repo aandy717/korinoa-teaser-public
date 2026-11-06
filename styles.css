@@ -11,11 +11,24 @@ html { min-height: 100%; background: var(--bg); }
 body { margin: 0; font-family: "Century Gothic", "Segoe UI", sans-serif; color: var(--ink); }
 a { color: inherit; }
 .site-shell {
+  --violet: #d8f500;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background: var(--bg) url("assets/movement-desktop.png") center top / 100% auto no-repeat;
+  background: linear-gradient(90deg, rgba(4, 9, 22, .88), rgba(4, 9, 22, .65) 28%, rgba(4, 9, 22, .18) 42%, transparent 55%) center top / 100% 100% no-repeat,
+    var(--bg) url("assets/hero-korinoa-lime-clean.webp") center top / 100% auto no-repeat;
 }
+.site-shell .coming-soon i, .site-shell .light-stroke {
+  background: linear-gradient(90deg, #d8f500, #55dfff, #d8f500);
+  box-shadow: 0 0 8px 1px rgba(216, 245, 0, .45);
+}
+.site-shell .curious { color: #eaf5be; }
+.site-shell .cta {
+  border-color: #d8f500;
+  box-shadow: inset 0 0 7px #35535b, 0 0 9px rgba(216, 245, 0, .4);
+}
+.site-shell .cta:hover, .site-shell .cta:focus-visible { background: #183039; }
+.site-shell :focus-visible { outline-color: #d8f500; }
 .topbar, .footer {
   display: flex;
   justify-content: space-between;
@@ -42,6 +55,7 @@ h1 span, h1 em { display: block; }
 h1 em { color: var(--violet); font-weight: inherit; }
 .light-stroke { margin: 3.2vw 0 2.25vw; width: 6.8vw; }
 .subtitle { margin: 0; font-size: clamp(14px, 1.35vw, 26px); letter-spacing: .22em; line-height: 1.5; }
+.site-shell .subtitle { width: 29ch; max-width: 100%; text-wrap: balance; }
 .subscribe { margin-top: clamp(24px, 2.5vw, 52px); }
 .curious { margin: 0 0 5px; color: #e9d8ff; font-size: clamp(17px, 1.35vw, 25px); }
 .invitation { margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.5; }
@@ -71,9 +85,9 @@ h1 em { color: var(--violet); font-weight: inherit; }
 @media (max-width: 760px) {
   :root { --gutter: clamp(20px, 6vw, 40px); }
   .site-shell {
-    --figure-height: min(86vw, 480px);
-    background-image: linear-gradient(0deg, var(--bg), transparent 34%), url("assets/movement.webp");
-    background-size: 100% var(--figure-height), auto var(--figure-height);
+    --figure-height: 56.3vw;
+    background-image: linear-gradient(0deg, var(--bg), transparent 34%), url("assets/hero-korinoa-lime-clean.webp");
+    background-size: 100% var(--figure-height), 100% auto;
     background-position: right 64px;
   }
   .topbar, .site-shell .topbar { padding: 26px var(--gutter) 0; }
